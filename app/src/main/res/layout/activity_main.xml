@@ -1,18 +1,279 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <divyansh.tech.wysiwyg_web_view.TextEditorView
+        android:id="@+id/editor_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/toolbar_line"
+        android:layout_alignParentTop="true" />
+
+    <View
+        android:id="@+id/toolbar_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/toolbar_scrollview"
+        android:background="#cccccc" />
+
+    <HorizontalScrollView
+        android:id="@+id/toolbar_scrollview"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_alignParentBottom="true"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbars="horizontal">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <divyansh.tech.wysiwyg_web_view.Toolbar
+            android:id="@+id/editor_toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <divyansh.tech.wysiwyg_web_view.TextEditorButtons
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="20dp"
+                app:srcCompat="@drawable/ic_format_bold"
+                app:toolType="bold" />
+
+            <divyansh.tech.wysiwyg_web_view.TextEditorButtons
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="20dp"
+                app:srcCompat="@drawable/ic_format_italic"
+                app:toolType="italic" />
+
+            <divyansh.tech.wysiwyg_web_view.TextEditorButtons
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="20dp"
+                app:srcCompat="@drawable/ic_format_underlined"
+                app:toolType="underline" />
+
+            <divyansh.tech.wysiwyg_web_view.TextEditorButtons
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="20dp"
+                app:srcCompat="@drawable/ic_format_strikethrough"
+                app:toolType="strikethrough" />
+
+            <divyansh.tech.wysiwyg_web_view.TextEditorButtons
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="20dp"
+                app:srcCompat="@drawable/ic_format_clear"
+                app:toolType="removeFormat" />
+
+            <divyansh.tech.wysiwyg_web_view.TextEditorButtons
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="20dp"
+                app:srcCompat="@drawable/ic_format_normal"
+                app:toolType="normal" />
+
+            <divyansh.tech.wysiwyg_web_view.TextEditorButtons
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="20dp"
+                app:srcCompat="@drawable/ic_format_h1"
+                app:toolType="h1" />
+
+            <divyansh.tech.wysiwyg_web_view.TextEditorButtons
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="20dp"
+                app:srcCompat="@drawable/ic_format_h2"
+                app:toolType="h2" />
+
+            <divyansh.tech.wysiwyg_web_view.TextEditorButtons
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="20dp"
+                app:srcCompat="@drawable/ic_format_h3"
+                app:toolType="h3" />
+
+            <divyansh.tech.wysiwyg_web_view.TextEditorButtons
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="20dp"
+                app:srcCompat="@drawable/ic_format_h4"
+                app:toolType="h4" />
+
+            <divyansh.tech.wysiwyg_web_view.TextEditorButtons
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="20dp"
+                app:srcCompat="@drawable/ic_format_h5"
+                app:toolType="h5" />
+
+            <divyansh.tech.wysiwyg_web_view.TextEditorButtons
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="20dp"
+                app:srcCompat="@drawable/ic_format_h6"
+                app:toolType="h6" />
+
+            <divyansh.tech.wysiwyg_web_view.TextEditorButtons
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="20dp"
+                app:srcCompat="@drawable/ic_format_superscript"
+                app:toolType="superscript" />
+
+            <divyansh.tech.wysiwyg_web_view.TextEditorButtons
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="20dp"
+                app:srcCompat="@drawable/ic_format_subscript"
+                app:toolType="subscript" />
+
+            <divyansh.tech.wysiwyg_web_view.TextEditorButtons
+                android:id="@+id/text_fore_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="20dp"
+                app:srcCompat="@drawable/ic_format_color_text"
+                app:toolType="textForeColor" />
+
+            <divyansh.tech.wysiwyg_web_view.TextEditorButtons
+                android:id="@+id/text_back_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="20dp"
+                app:srcCompat="@drawable/ic_format_color_fill"
+                app:toolType="textBackColor" />
+
+            <divyansh.tech.wysiwyg_web_view.TextEditorButtons
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="20dp"
+                app:srcCompat="@drawable/ic_format_list_bulleted"
+                app:toolType="unordered" />
+
+            <divyansh.tech.wysiwyg_web_view.TextEditorButtons
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="20dp"
+                app:srcCompat="@drawable/ic_format_list_numbered"
+                app:toolType="ordered" />
+
+            <divyansh.tech.wysiwyg_web_view.TextEditorButtons
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="20dp"
+                app:srcCompat="@drawable/ic_format_quote"
+                app:toolType="blockQuote" />
+
+            <divyansh.tech.wysiwyg_web_view.TextEditorButtons
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="20dp"
+                app:srcCompat="@drawable/ic_format_code"
+                app:toolType="blockCode" />
+
+            <divyansh.tech.wysiwyg_web_view.TextEditorButtons
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="20dp"
+                app:srcCompat="@drawable/ic_format_align_left"
+                app:toolType="alignLeft" />
+
+            <divyansh.tech.wysiwyg_web_view.TextEditorButtons
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="20dp"
+                app:srcCompat="@drawable/ic_format_align_center"
+                app:toolType="alignCenter" />
+
+            <divyansh.tech.wysiwyg_web_view.TextEditorButtons
+                android:id="@+id/format_align_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="20dp"
+                app:srcCompat="@drawable/ic_format_align_right"
+                app:toolType="alignRight" />
+
+            <divyansh.tech.wysiwyg_web_view.TextEditorButtons
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="20dp"
+                app:srcCompat="@drawable/ic_format_align_justify"
+                app:toolType="alignJustify" />
+
+            <divyansh.tech.wysiwyg_web_view.TextEditorButtons
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="20dp"
+                app:srcCompat="@drawable/ic_insert_line"
+                app:toolType="horizontalRule" />
+
+            <divyansh.tech.wysiwyg_web_view.TextEditorButtons
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="20dp"
+                app:srcCompat="@drawable/ic_format_indent_increase"
+                app:toolType="indent" />
+
+            <divyansh.tech.wysiwyg_web_view.TextEditorButtons
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="20dp"
+                app:srcCompat="@drawable/ic_format_indent_decrease"
+                app:toolType="outdent" />
+
+            <divyansh.tech.wysiwyg_web_view.TextEditorButtons
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="20dp"
+                app:srcCompat="@drawable/ic_insert_link_off"
+                app:toolType="unlink" />
+
+            <divyansh.tech.wysiwyg_web_view.TextEditorButtons
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="20dp"
+                app:srcCompat="@drawable/ic_clear"
+                app:toolType="clear" />
+
+            <divyansh.tech.wysiwyg_web_view.TextEditorButtons
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="20dp"
+                app:srcCompat="@drawable/ic_view_code"
+                app:toolType="editHtml" />
+        </divyansh.tech.wysiwyg_web_view.Toolbar>
+    </HorizontalScrollView>
+</RelativeLayout>
