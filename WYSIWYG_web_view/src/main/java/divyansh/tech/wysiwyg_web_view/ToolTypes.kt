@@ -20,5 +20,20 @@ annotation class ToolType {
         var TEXT_FORE_COLOR = 15
         var TEXT_BACK_COLOR = 16
         var CODE = 17
+        var UNORDERED_LIST = 18
+        var ORDERED_LIST = 19
+        var QUOTE = 20
+        var ALIGN_LEFT = 21
+        var ALIGN_CENTER = 22
+        var ALIGN_RIGHT = 23
+        var ALIGN_JUSTIFY = 24
+        var HORIZONTAL_RULE = 25
+        var INDENT = 26
+        var OUTDENT = 27
+        var TABLE = 28
+        var LINK = 29
+        var UNLINK = 30
+        var CLEAR = 31
+        var EDIT_HTML = 32
     }
 }
