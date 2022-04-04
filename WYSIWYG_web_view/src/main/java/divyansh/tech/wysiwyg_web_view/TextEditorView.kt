@@ -44,7 +44,7 @@ class TextEditorView : WebView {
         settings.javaScriptEnabled = true
         settings.domStorageEnabled = true
         webChromeClient = WebChromeClient()
-        webViewClient = RTextEditorWebViewClient()
+        webViewClient = TextEditorWebViewClient()
         addJavascriptInterface(this, "RTextEditorView")
         loadUrl(ASSETS_EDITOR_HTML)
     }
@@ -272,7 +272,7 @@ class TextEditorView : WebView {
         }
     }
 
-    protected fun exec(trigger: String) {
+    private fun exec(trigger: String) {
         if (isReady) {
             load(trigger)
         } else {
@@ -288,7 +288,7 @@ class TextEditorView : WebView {
         }
     }
 
-    private inner class RTextEditorWebViewClient : WebViewClient() {
+    private inner class TextEditorWebViewClient : WebViewClient() {
         override fun onPageFinished(view: WebView, url: String) {
             isReady = url.equals(ASSETS_EDITOR_HTML, ignoreCase = true)
             super.onPageFinished(view, url)

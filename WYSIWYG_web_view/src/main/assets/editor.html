@@ -55,10 +55,10 @@
 
                 // Set initial content
                 var code = $('#summernote').summernote('code');
-                RTextEditorView.onEditorContentChanged(code);
+                TextEditorView.onEditorContentChanged(code);
               },
               onChange: function(contents, $editable) {
-                RTextEditorView.onEditorContentChanged(contents);
+                TextEditorView.onEditorContentChanged(contents);
               }
             }
         });

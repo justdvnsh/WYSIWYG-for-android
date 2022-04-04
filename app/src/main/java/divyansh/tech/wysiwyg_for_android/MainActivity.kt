@@ -65,18 +65,11 @@ class MainActivity() : AppCompatActivity(),
     }
 
     override fun onColorSelected(dialogId: Int, color: Int) {
-        if (dialogId == DIALOG_TEXT_FORE_COLOR_ID) {
-            editor.setTextColor(color)
-        } else if (dialogId == DIALOG_TEXT_BACK_COLOR_ID) {
-            editor.setTextBackgroundColor(color)
-        }
     }
 
     override fun onDialogDismissed(dialogId: Int) {}
 
     companion object {
-        private val TAG = "RTextEditorView"
-        private val DIALOG_TEXT_FORE_COLOR_ID = 0
-        private val DIALOG_TEXT_BACK_COLOR_ID = 1
+        private const val TAG = "EditorView"
     }
 }
